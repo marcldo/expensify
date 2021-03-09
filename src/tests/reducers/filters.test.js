@@ -30,3 +30,13 @@ test('should set sort by to date', () => {
 
   expect(state.sortBy).toBe('date');
 });
+
+test('should set text filter', () => {
+  const text = 'This is test value'
+  const action = {
+    type: 'SET_TEXT_FILTER',
+    text
+  }
+  const state = filtersReducer(undefined, action);
+  expect(state.text).toBe(text);
+});
