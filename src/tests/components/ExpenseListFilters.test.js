@@ -43,7 +43,7 @@ test('should handle text change', () => {
 });
 
 test('should sort by date', () => {
-  const value = 'date'
+  const value = 'date';
   wrapper.setProps({
     filters: altFilters
   });
@@ -54,7 +54,11 @@ test('should sort by date', () => {
 });
 
 test('should sort by amount', () => {
-
+  const value = 'amount';
+  wrapper.find('select').simulate('change', {
+    target: { value }
+  });
+  expect(sortByAmount).toHaveBeenCalled();
 });
 
 test('should handle date change', () => {
