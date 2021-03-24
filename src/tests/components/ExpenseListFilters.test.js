@@ -34,3 +34,26 @@ test('should render ExpenseListFilters alt props correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('should handle text change', () => {
+  const value = 'new value';
+  wrapper.find('input').simulate('change', {
+    target: { value }
+  });
+  expect(setTextFilter).toHaveBeenLastCalledWith(value);
+});
+
+test('should sort by date', () => {
+
+});
+
+test('should sort by amount', () => {
+
+});
+
+test('should handle date change', () => {
+
+});
+
+test('should handle date focus change', () => {
+
+});
